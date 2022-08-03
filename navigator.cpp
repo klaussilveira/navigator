@@ -77,9 +77,9 @@ int main(int argc, char *argv[])
   WebKitSettings* settings = webkit_web_view_get_settings(widget);
 
   // Default configuration
+  webkit_web_context_set_spell_checking_enabled(context, false);
   webkit_cookie_manager_set_accept_policy(cookies, WEBKIT_COOKIE_POLICY_ACCEPT_NO_THIRD_PARTY);
   webkit_settings_set_enable_javascript(settings, false);
-  webkit_settings_set_enable_plugins(settings, false);
   webkit_settings_set_user_agent(settings, config.user_agent.c_str());
 
   Gtk::Box layout(Gtk::ORIENTATION_VERTICAL);
